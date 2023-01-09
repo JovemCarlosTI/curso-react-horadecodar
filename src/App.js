@@ -1,21 +1,22 @@
 import './App.css';
-import SayMyName from './components/SayMyName';
-import Pessoa from './components/Pessoa';
-import Frase from './components/Frase';
-import List from './components/List';
-import Evento from './components/Evento';
-import Form from './components/Form';
+import OutraLista from './components/OutraLista';
+// import SayMyName from './components/SayMyName';
+// import Pessoa from './components/Pessoa';
+// import Frase from './components/Frase';
+// import List from './components/List';
+// import Evento from './components/Evento';
+// import Form from './components/Form';
+// import Condicional from './components/Condicional';
 
 function App() {
 
+  const meusItens = ['React', 'Vue', 'Angular', 'JS', 'HTML']
+
   return (
     <div className="App">
-      <Frase />
-      <SayMyName name="Carlos" />
-      <Pessoa name="Carlos" idade="18" profissao="Desenvolvedor" foto="https://avatars.githubusercontent.com/u/59931270?v=4" />
-      <List />
-      <Evento />
-      <Form />
+      <h1>Renderização de listas</h1>
+      <OutraLista itens={meusItens}/>
+      <OutraLista itens={[]}/>
     </div>
   );
 }

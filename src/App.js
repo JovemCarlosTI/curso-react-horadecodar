@@ -1,5 +1,8 @@
 import './App.css';
-import OutraLista from './components/OutraLista';
+import {useState} from 'react';
+import SeuNome from './components/SeuNome';
+import Saudacao from './components/Saudacao';
+// import OutraLista from './components/OutraLista';
 // import SayMyName from './components/SayMyName';
 // import Pessoa from './components/Pessoa';
 // import Frase from './components/Frase';
@@ -10,13 +13,14 @@ import OutraLista from './components/OutraLista';
 
 function App() {
 
-  const meusItens = ['React', 'Vue', 'Angular', 'JS', 'HTML']
+  // const meusItens = ['React', 'Vue', 'Angular', 'JS', 'HTML']
+  const [nome, setNome] = useState('')
 
   return (
     <div className="App">
-      <h1>Renderização de listas</h1>
-      <OutraLista itens={meusItens}/>
-      <OutraLista itens={[]}/>
+      <h1>State Lift</h1>
+      <SeuNome setNome={setNome}/>
+      <Saudacao nome={nome}/>
     </div>
   );
 }

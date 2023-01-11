@@ -1,0 +1,26 @@
+.list {
+    display: flex;
+    list-style: none;
+
+}
+
+.item {
+    margin-right: 1em;
+    
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item a:hover {
+    transition: 0.4s;
+    color: rgb(143, 143, 143);
+    text-decoration: underline;
+}
+
+.item a:active {
+    transition: 0.4s;
+    color: rgb(4, 76, 0);
+    text-decoration: underline;
+}

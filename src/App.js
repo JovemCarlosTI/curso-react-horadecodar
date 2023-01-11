@@ -1,27 +1,26 @@
-import './App.css';
-import {useState} from 'react';
-import SeuNome from './components/SeuNome';
-import Saudacao from './components/Saudacao';
-// import OutraLista from './components/OutraLista';
-// import SayMyName from './components/SayMyName';
-// import Pessoa from './components/Pessoa';
-// import Frase from './components/Frase';
-// import List from './components/List';
-// import Evento from './components/Evento';
-// import Form from './components/Form';
-// import Condicional from './components/Condicional';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Contato from './pages/Contato';
+import Empresa from './pages/Empresa';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+
 
 function App() {
 
-  // const meusItens = ['React', 'Vue', 'Angular', 'JS', 'HTML']
-  const [nome, setNome] = useState('')
-
   return (
-    <div className="App">
-      <h1>State Lift</h1>
-      <SeuNome setNome={setNome}/>
-      <Saudacao nome={nome}/>
-    </div>
+    <Router>
+      {/* Cabeçalho, independente da página */}
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/empresa" element={<Empresa />} />
+        <Route path="/contato" element={<Contato />}/>
+      </Routes>
+      {/* Rodapé, independente da página */}
+      <Footer />
+    </Router>
   );
 }
 
